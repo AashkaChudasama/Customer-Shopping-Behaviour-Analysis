@@ -127,3 +127,50 @@ Interactive filters:
 - Subscription status is used as a proxy for customer loyalty; it is not a direct measure of retention.
 - No female subscribers appear in the dataset, so gender and subscription effects cannot be separated confidently.
 - The analysis does not establish causation. Findings should be validated with additional data and controlled business tests.
+
+## How to Run
+
+### Python notebook
+1. Clone or download the repository.
+2. Install the required Python packages:
+   ```bash
+   pip install pandas sqlalchemy psycopg2-binary python-dotenv jupyter
+   ```
+3. Open the notebook in Jupyter.
+4. Update the CSV path if your local folder structure differs.
+5. Configure PostgreSQL connection details through environment variables in a local `.env` file:
+   ```text
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_NAME=your_database
+   ```
+6. Run the notebook to clean the dataset and load the `customer` table into PostgreSQL.
+
+**Security:** Do not commit your `.env` file or database credentials to GitHub.
+
+### SQL analysis
+1. Open the SQL script in PostgreSQL (for example, using pgAdmin).
+2. Connect to the database containing the cleaned `customer` table.
+3. Run the queries to reproduce the business analysis.
+
+### Power BI dashboard
+1. Open the `.pbix` file in Power BI Desktop.
+2. If prompted, update the data source connection to your local data or database.
+3. Refresh the report and use the filters to explore customer and category performance.
+
+## Project Deliverables
+
+- Raw customer shopping behaviour dataset
+- Python notebook for data cleaning and feature engineering
+- SQL script containing business analysis queries
+- Interactive Power BI dashboard
+- Business Requirements Document
+- Final project report
+
+---
+
+**Project:** Velora – Customer Shopping Behaviour Analysis  
+**Domain:** Retail & Customer Analytics  
+**Focus:** Data Cleaning | Exploratory Data Analysis | SQL Analysis | Customer Segmentation | Power BI Dashboard
